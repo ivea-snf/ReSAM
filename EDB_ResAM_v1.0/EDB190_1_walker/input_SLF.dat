@@ -1,0 +1,8 @@
+8.34,58.44 27.07 !NaCl
+6.69    190 190 small organic   total organcs = 6.69(small) + 10.3(big)
+10.3,  1000 1000 
+0.792  76.78 37.97   XCl
+0.608 82.82   36.67   NaY
+0.328 99.8   41.23 35.78    XY mg, MM MV MMX
+.566	RH effl of mixed crystal
+.74	RH effl of crystal, not used, it will be calcualted based the solubilty of NaCl
