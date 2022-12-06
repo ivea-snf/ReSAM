@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/573581115.svg)](https://zenodo.org/badge/latestdoi/573581115)
+
 # Respiratory Aerosol Model (ResAM) Version v1.0
 
 ## Description
