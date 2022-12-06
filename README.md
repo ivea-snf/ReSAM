@@ -206,6 +206,14 @@ or be easily converted to pdf with a pdf reader.
 ## Authors
 Beiping Luo, Liviana K. Klein, and Thomas Peter
 
+## Citing ResAM
+
+If you use ResAM please cite the used version and/or the following published articles:
+
+Luo, B.; Schaub, A.; Glas, I.; Klein, L. K.; David, S. C.; Bluvshtein, N.; Violaki, K.; Motos, G.; Pohl, M. O.; Hugentobler, W.; Nenes, A.; Krieger, U. K.; Stertz, S.; Peter, T.; Kohn, T., Expiratory aerosol pH: the overlooked driver of airborne
+virus inactivation. *Environmental Science & Technology* **2022**
+
+
 ## References
 **[Bicer 2014]** Bicer, E. M., Ph.D. thesis (King’s College London) **2014**.<br>
 **[Bandura 2006]** Bandura, A.V.; Lvov S.N, The ionization constant of water over wide ranges of temperature and density. *J. Phys. Chem. Ref. Data.* **2006**, 35, 15–30. <br>
