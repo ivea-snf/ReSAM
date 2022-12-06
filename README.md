@@ -213,6 +213,10 @@ If you use ResAM please cite the used version and/or the following published art
 Luo, B.; Schaub, A.; Glas, I.; Klein, L. K.; David, S. C.; Bluvshtein, N.; Violaki, K.; Motos, G.; Pohl, M. O.; Hugentobler, W.; Nenes, A.; Krieger, U. K.; Stertz, S.; Peter, T.; Kohn, T., Expiratory aerosol pH: the overlooked driver of airborne
 virus inactivation. *Environmental Science & Technology* **2022**
 
+## License
+
+©2022 ETH Zurich, Beiping Luo; Institute for Atmospheric and Climate Science; Prof. Thomas Peter
+
 
 ## References
 **[Bicer 2014]** Bicer, E. M., Ph.D. thesis (King’s College London) **2014**.<br>
