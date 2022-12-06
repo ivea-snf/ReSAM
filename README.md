@@ -221,7 +221,7 @@ Beiping Luo, Liviana K. Klein, and Thomas Peter
 virus inactivation. *Environmental Science & Technology* **in press** <br>
 **[Murphy 2005]** Murphy D.M., T. Koop, Review of the vapour pressures of ice and supercooled water for atmospheric applications. *Q. J. Royal Meteorol. Soc.* **2005**, 131, 1539–1565. <br>
 **[Pinho 2005]** Pinho S.P., E.A. Macedo, Solubility of NaCl, NaBr, and KCl in water, methanol, ethanol, and their mixed solvents.  *J. Chem. Eng. Data* **2005**, 50, 29–32. <br>
-**[Renhard 2004]** Renard J.J., S.E. Calidonna, M.V. Henley, Fate of ammonia in the atmosphere - A review for applicability to hazardous releases. *J. Hazard. Mater.* **2004**, 108, 29–60. <br>
+**[Renard 2004]** Renard J.J., S.E. Calidonna, M.V. Henley, Fate of ammonia in the atmosphere - A review for applicability to hazardous releases. *J. Hazard. Mater.* **2004**, 108, 29–60. <br>
 **[Sander 2015]** Sander, R. Compilation of Henry’s law constants (Version 4.0) for water as solvent. *Atmospheric Chemistry and Physics.* **2015**, 15. 4399-4981. 10.5194/acp-15-4399-2015. <br>
 **[Walker 2021]** Walker, J. S.; Archer, J.; Gregson, F. K.; Michel, S. E.; Bzdek, B. R.; Reid, J. P., Accurate representations of the microphysical processes occurring during the transport of exhaled aerosols and droplets. *ACS Cent. Sci.* **2021**, 7, 200–209. <br>
 **[Zobrist 2011]** Zobrist, B.; Soonsin, V.; Luo, B. P.; Krieger, U. K.; Marcolli, C.; Peter, T.; Koop, T. Ultra-Slow Water Diffusion in Aqueous Sucrose Glasses. *Phys. Chem. Chem. Phys.* **2011**, 13 (8), 3514. <br>
