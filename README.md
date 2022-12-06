@@ -3,7 +3,7 @@
 ## Description
 ResAM calculates the radially resolved temporal evolution of the composition and pH of respiratory aerosol particles during exhalation caused by gas-particle partitioning with the ambient air and the resulting inactivation of Influenza-A-virus (IAV) and SARS-CoV-2.
 
-The model was first used and described in detail in Luo et al. (2022).
+The model was first used and described in detail by Luo et al. (2022).
 
 In addition, to what was described in Luo et al. (2022), ResAM can be applied to various other solutions such as Minimum Essential Medium (MEM) and Phosphate Buffered Saline (PBS) by varying the initial composition of the droplets. Furthermore, it can also be applied to particles injected into laboratory conditions instead of modelling the exhalation process.
 
