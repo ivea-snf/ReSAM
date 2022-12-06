@@ -215,7 +215,7 @@ virus inactivation. *Environmental Science & Technology* **2022**
 
 ## License
 
-©2022 ETH Zurich, Beiping Luo; Institute for Atmospheric and Climate Science; Prof. Thomas Peter
+©2022 ETH Zurich, Beiping Luo; Institute for Atmospheric and Climate Science; Prof. Thomas Peter. Published under GNU General Public License v3.0. 
 
 
 ## References
