@@ -1,0 +1,10 @@
+for initial size 1 um, and typical room,and ACH 2 
+   0.100000E-03  !cm
+1000		Pressure in hPa           
+           5   50.00000   ! 5 shells, eddy = 50 cm2/s    
+10 ! outputmode  : NaCl crystal in center only
+0  ! pH mode
+    -0.07   0.952    309.15   48       230     46500      0.0d0     0.0d0
+     0.0    0.910    307.15   48       230     46500      0.0d0     0.0d0	
+     1.0    0.5d0    293.15   48.7     36.5    600.0      0.27      0.237
+     1.0E7  0.5d0    293.15   48.7     36.5    600.0      0.27      0.237
