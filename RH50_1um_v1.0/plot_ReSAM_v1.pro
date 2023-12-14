@@ -1,3 +1,40 @@
+FUNCTION Exponent, axis, index, number
+
+     ; A special case.
+     IF number EQ 0 THEN RETURN, '0' 
+
+     ; Assuming multiples of 10 with format.
+     ex = String(number, Format='(e8.0)') 
+     pt = StrPos(ex, '.')
+
+
+     first = StrMid(ex, 0, pt)
+     sign = StrMid(ex, pt+2, 1)
+     thisExponent = StrMid(ex, pt+3)
+
+     ; Shave off leading zero in exponent
+     WHILE StrMid(thisExponent, 0, 1) EQ '0' DO thisExponent = StrMid(thisExponent, 1)
+
+     ; Fix for sign and missing zero problem.
+     IF (Long(thisExponent) EQ 0) THEN BEGIN
+        sign = ''
+        thisExponent = '0'
+     ENDIF
+     
+     ; Make the exponent a superscript.
+     IF sign EQ '-' THEN BEGIN
+        IF first EQ 1 THEN RETURN, '10!U' + sign + thisExponent + '!N'
+         
+        RETURN, first + 'x10!U' + sign + thisExponent + '!N'
+        
+     
+     ENDIF ELSE BEGIN
+        IF first EQ 1 THEN RETURN, '10!U' + thisExponent + '!N'
+        RETURN, first + 'x10!U' + thisExponent + '!N'
+     ENDELSE
+     
+   END
+
 PRO setColorTable,sw=sw
   COMMON colortable,red,green,blue,blackindex,redindex,greenindex,blueindex,ncolors
   IF n_elements(red) EQ 0 THEN init=1 ELSE init=0
@@ -92,16 +129,16 @@ ns2 = intARR(Nt)
 
 
 NAme=strarr(NP+6)
-      name=['water activity','molality H2O', 'molality organics small', 'molality total acetic acid', 'molality total ammonium', 'molality total CO!D2!N', 'pH', 'molality OH!U-!N', 'molality CH!D3!NCOO!U-!N', 'molality CH!D3!NCOOH', 'molality NH!D4!NCH!D3!NCOO', 'molality organics big', 'molality NH!D4!N!U+!N', 'molality CO!D2!N', 'molality CO!D3!N!U-2!N', 'molality HCO!D3!N!U-!N', 'molality Na!U+!N', 'molality Cl!U-!N', 'molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer Flu) ','log!D10!N(titer SARS) ','molality NH!D3!N', 'H3PO4','H2PO4-','HPO4-2', 'HSO4-','SO4-2', 'NaCl sauration ratio']
+      name=['Water activity','Molality H!D2!NO', 'Molality organics small', 'Molality total acetic acid', 'Molality total ammonium', 'Molality total CO!D2!N', 'pH', 'Molality OH!U-!N', 'Molality CH!D3!NCOO!U-!N', 'Molality CH!D3!NCOOH', 'Molality NH!D4!NCH!D3!NCOO', 'Molality organics big', 'Molality NH!D4!N!U+!N', 'Molality CO!D2!N', 'Molality CO!D3!N!U2-!N', 'Molality HCO!D3!N!U-!N', 'Molality Na!U+!N', 'Molality Cl!U-!N', 'Molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer Flu) ','log!D10!N(titer SARS) ','Molality NH!D3!N', 'Molality H3PO4','H2PO4-','HPO4-2', 'HSO4-','SO4-2', 'NaCl sauration ratio']
 
-if NP eq 29 then       name=['water activity','molality H2O', 'molality organics small', 'molality total acetic acid', 'molality total ammonium', 'molality total CO!D2!N', 'pH', 'molality OH!U-!N', 'molality CH!D3!NCOO!U-!N', 'molality CH!D3!NCOOH', 'molality NH!D4!NCH!D3!NCOO', 'molality organics big', 'molality NH!D4!N!U+!N', 'molality CO!D2!N', 'molality CO!D3!N!U-2!N', 'molality HCO!D3!N!U-!N', 'molality Na!U+!N', 'molality Cl!U-!N', 'molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer Flu) ','log!D10!N(titer SARS) ','molality NH!D3!N', 'H3PO4','H2PO4-','HPO4-2', 'HSO4-','SO4-2', 'm-NaCl crystal', 'NaCl sauration ratio']
-
-
-if np eq 28 then      name=['water activity','molality H2O', 'molality organics small', 'molality total acetic acid', 'molality total ammonium', 'molality total CO!D2!N', 'pH', 'molality OH!U-!N', 'molality CH!D3!NCOO!U-!N', 'molality CH!D3!NCOOH', 'molality NH!D4!NCH!D3!NCOO', 'molality organics big', 'molality NH!D4!N!U+!N', 'molality CO!D2!N', 'molality CO!D3!N!U-2!N', 'molality HCO!D3!N!U-!N', 'molality Na!U+!N', 'molality Cl!U-!N', 'molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer Flu) ','log!D10!N(titer SARS) ','molality NH!D3!N', 'H3PO4','H2PO4-','HPO4-2', 'HSO4-','SO4-2', 'NaCl sauration ratio']
+if NP eq 29 then       name=['Water activity','Molality H!D2!NO', 'Molality organics small', 'Molality total acetic acid', 'Molality total ammonium', 'Molality total CO!D2!N', 'pH', 'Molality OH!U-!N', 'Molality CH!D3!NCOO!U-!N', 'Molality CH!D3!NCOOH', 'Molality NH!D4!NCH!D3!NCOO', 'Molality organics big', 'Molality NH!D4!N!U+!N', 'Molality CO!D2!N', 'Molality CO!D3!N!U2-!N', 'Molality HCO!D3!N!U-!N', 'Molality Na!U+!N', 'Molality Cl!U-!N', 'Molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer IVA) ','log!D10!N(titer SARS) ','Molality NH!D3!N', 'Molality H!D3!NPO!D4!N','Molality H!D2!NPO!D4!N!U-!N','Molality HPO!D4!N!U-2!N', 'Molality HSO!D4!N!U-!N','Molality SO!D4!N!U-2!N', 'Molality NaCl crystal', 'NaCl sauration ratio']
 
 
+if np eq 28 then      name=['Water activity','Molality H!D2!NO', 'Molality organics small', 'Molality total acetic acid', 'Molality total ammonium', 'Molality total CO!D2!N', 'pH', 'Molality OH!U-!N', 'Molality CH!D3!NCOO!U-!N', 'Molality CH!D3!NCOOH', 'Molality NH!D4!NCH!D3!NCOO', 'Molality organics big', 'Molality NH!D4!N!U+!N', 'Molality CO!D2!N', 'Molality CO!D3!N!U-2!N', 'Molality HCO!D3!N!U-!N', 'Molality Na!U+!N', 'Molality Cl!U-!N', 'Molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer Flu) ','log!D10!N(titer SARS) ','Molality NH!D3!N', 'H3PO4','H2PO4-','HPO4-2', 'HSO4-','SO4-2', 'NaCl sauration ratio']
 
-if NP eq 26 then       name=['water activity','molality H2O', 'molality organics small', 'molality total acetic acid', 'molality total ammonium', 'molality total CO!D2!N', 'pH', 'molality OH!U-!N', 'molality CH!D3!NCOO!U-!N', 'molality CH!D3!NCOOH', 'molality NH!D4!NCH!D3!NCOO', 'molality organics big', 'molality NH!D4!N!U+!N', 'molality CO!D2!N', 'molality CO!D3!N!U-2!N', 'molality HCO!D3!N!U-!N', 'molality Na!U+!N', 'molality Cl!U-!N', 'molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer Flu) ','log!D10!N(titer SARS) ','molality NH!D3!N', 'H3PO4','H2PO4-','HPO4-2', 'NaCl sauration ratio']
+
+
+if NP eq 26 then       name=['Water activity','Molality H!D2!NO', 'Molality organics small', 'Molality total acetic acid', 'Molality total ammonium', 'Molality total CO!D2!N', 'pH', 'Molality OH!U-!N', 'Molality CH!D3!NCOO!U-!N', 'Molality CH!D3!NCOOH', 'Molality NH!D4!NCH!D3!NCOO', 'Molality organics big', 'Molality NH!D4!N!U+!N', 'Molality CO!D2!N', 'Molality CO!D3!N!U2-!N', 'Molality HCO!D3!N!U-!N', 'Molality Na!U+!N', 'Molality Cl!U-!N', 'Molality NO!D3!N!U-!N','X!U+!N','Y!U-!N','log!D10!N(titer Flu) ','log!D10!N(titer SARS) ','Molality NH!D3!N', 'H3PO4','H2PO4-','HPO4-2', 'NaCl sauration ratio']
 
 
 klog=intarr(NP+2)
@@ -162,7 +199,7 @@ repeat begin
   time(i)=timee
   rad(i)=radd
 
-if (radd*1D4*1.1 gt zmax and timee le xmax) then zmax= radd*1D4*1.1 
+if (radd*1D4*1.1 gt zmax and timee le xmax) then zmax= radd*1D4*1.2 
   ns2(i)=nss
 
 
@@ -213,6 +250,7 @@ nt=i-1
 if (timee gt xmax) then xmax=timee
 
 print, xmin,xmax
+xmax=1D4
 
 
 ;plot aw
@@ -299,8 +337,8 @@ repeatpH:
 
 !y.style    = 1
 !x.style    = 1
-!y.title    = 'radius [!9m!Xm]'
-!x.title    = 'time [s]'
+!y.title    = 'Radial distance (!9m!Xm)'
+!x.title    = 'Time (s)'
 
 close,1
 
@@ -308,7 +346,7 @@ print, x(0)
 zmin=0
 print, xmax
  plot_oi, [1,2],[2,2], xrange=[xmin,xmax], $
-  yrange=[zmin,zmax],/nodata,charsize=1.5
+  yrange=[zmin,zmax],/nodata,charsize=1.5, xtickformat = 'exponent'
   
 
 for i=0,nt-1 do begin
@@ -382,7 +420,7 @@ endif
 i=0
 
 	 plot_oi, [1,2],[2,2], xrange=[xmin,xmax], $
-  yrange=[zmin,zmax],/nodata,charsize=1.5,/noerase
+  yrange=[zmin,zmax],/nodata,charsize=1.5,/noerase, xtickformat = 'exponent'
 
 
 xjs = FLTARR(2,ncolors)
@@ -423,7 +461,7 @@ if klog(k) eq 1 then ymax1 =exp(ymax)
 print, name(k), ymin1,ymax1
 if klog(k) eq 0 then contour,/noerase,xjs,xs,ys,/nodata,yrange=[ymin1,ymax1],charsize=1.25
 
-if klog(k) eq 1 then contour,/noerase,xjs,xs,ys,/nodata,charsize=1.25,yrange=[ymin1,ymax1],/ylog
+if klog(k) eq 1 then contour,/noerase,xjs,xs,ys,/nodata,charsize=1.25,yrange=[ymin1,ymax1],/ylog, ytickformat = 'exponent'
 
 TV, xjcolors,$                                
     !x.window(0), !y.window(0),$
@@ -432,13 +470,13 @@ TV, xjcolors,$
 
 ;=============
 if klog(k) eq 0 then cONtoUR,/noerase,xjs,xs,ys,/nodata,charsize=1.25,yrange=[ymin1,ymax1]
-if klog(k) eq 1 then cONtoUR,/noerase,xjs,xs,ys,/nodata,charsize=1.25,yrange=[ymin1,ymax1],/ylog
+if klog(k) eq 1 then cONtoUR,/noerase,xjs,xs,ys,/nodata,charsize=1.25,yrange=[ymin1,ymax1],/ylog, ytickformat = 'exponent'
 
 
 !y.style    = 1
 !x.style    = 1
-!y.title    = 'radius [um]'
-!x.title    = 'time [s]'
+!y.title    = 'Radial distance (um)'
+!x.title    = 'Time (s)'
 !y.ticks    = 0
 !x.ticks    = 0
 if irepeat le 2 and k eq 6 then begin
@@ -499,14 +537,14 @@ itime0=-1
 
 !P.POSITION=[0.2,0.15,0.95,0.95]
  plot_oi, timetiter,t, xrange=[xmin,xmax], $
-  yrange=[285,310d0],charsize=1.5,xtitle='Time [s]', ytitle = 'T [K] ', thick=3
+  yrange=[285,310d0],charsize=1.5,xtitle='Time (s)', ytitle = 'T (K) ', thick=3, xtickformat = 'exponent'
   oplot, timetiter,tdrop,  line=2,thick=3
   
 ymin=1D-4
 ymax=1D3
 if ymin le 1D-10 then ymin = 1D-10
 plot_io, timetiter,titer, xrange=[0,1E4], $
-  yrange=[ymin,2d0],charsize=1.5,xtitle='Time [s]', ytitle = ' log!D10!N(titer numbber)', thick=3
+  yrange=[ymin,2d0],charsize=1.5,xtitle='Time (s)', ytitle = ' log!D10!N(titer number)', thick=3, ytickformat = 'exponent'
 
 ntc=NT0
 oplot, timetiter(0:Ntc),titer(0:Ntc),line=0,thick=6,color=blueindex
@@ -520,7 +558,7 @@ ymaxa=max(titer(0:NTC))
 timemaxa=max(ttiter(0:NTC))
 
 plot_io, timetiter,titer, xrange=[0,timemaxa], $
-  yrange=[ymina,ymaxa],charsize=1.5,xtitle='Time [s]', ytitle = ' log!D10!N(titer numbber)', thick=3
+  yrange=[ymina,ymaxa],charsize=1.5,xtitle='Time (s)', ytitle = ' log!D10!N(titer number)', thick=3, ytickformat = 'exponent'
 oplot, timetiter(0:Ntc),titer(0:Ntc),line=0,thick=6,color=blueindex
 oplot, timetiter(0:Ntc),titers(0:Ntc),line=0,thick=6,color=redindex
 
@@ -564,7 +602,7 @@ endfor
 	ymin=1D-4
 	ymax=10D3
  plot_oo, [1,2],[2,2], xrange=[xmin,xmax], $
-  yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time [s]', ytitle = ' CH!D3!NCOOH [ppbv]'
+  yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time (s)', ytitle = ' CH!D3!NCOOH (ppbv)', xtickformat = 'exponent', ytickformat = 'exponent'
   oplot, time, pa, thick=5
   oplot, time, ppa, thick=5, color=redindex
   xx1=10
@@ -582,7 +620,7 @@ xyouts, .99*xx3,y2, 'Partial pressure', color=redindex
 	ymin=1D-4
 	ymax=1D3
  plot_oo, [1,2],[2,2], xrange=[xmin,xmax], $
-yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time [s]', ytitle = '  NH!D3!N [ppbv]'
+yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time (s)', ytitle = '  NH!D3!N (ppbv)', xtickformat = 'exponent', ytickformat = 'exponent'
   
   oplot, time, pNH3, thick=5
   oplot, time, ppNH3, thick=5, color=redindex
@@ -602,7 +640,7 @@ xyouts, .99*xx3,y2, 'Partial pressure', color=redindex
 	ymax=10D0
 
  plot_oo, [1,2],[2,2], xrange=[xmin,xmax], $
-  yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time [s]', ytitle = ' HNO!D3!N [ppbv]'
+  yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time (s)', ytitle = ' HNO!D3!N (ppbv)', xtickformat = 'exponent', ytickformat = 'exponent'
   oplot, time, pHNO3, thick=5
   oplot, time, ppHNO3, thick=5, color=redindex
 
@@ -620,7 +658,7 @@ xyouts, .99*xx3,y2, 'Partial pressure'
 
   
  plot_oo, [1,2],[2,2], xrange=[xmin,xmax], $
-  yrange=[1D-5,ymax],/nodata,charsize=1.5,xtitle='Time [s]', ytitle = '  HCl [ppbv]'
+  yrange=[1D-5,ymax],/nodata,charsize=1.5,xtitle='Time (s)', ytitle = '  HCl (ppbv)', xtickformat = 'exponent', ytickformat = 'exponent'
   oplot, time, pHCL, thick=5
   oplot, time, ppHCl, thick=5, color=redindex
 xx1=2D-3
@@ -639,7 +677,7 @@ xyouts, .99*xx3,y2, 'Partial pressure'
 	ymin=100
 	ymax=1D4
  plot_oo, [1,2],[2,2], xrange=[xmin,xmax], $
-  yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time [s]', ytitle = ' CO!D2!N [ppmv]'
+  yrange=[ymin,ymax],/nodata,charsize=1.5,xtitle='Time (s)', ytitle = ' CO!D2!N (ppmv)', xtickformat = 'exponent', ytickformat = 'exponent'
   oplot, time, pco2, thick=5
 
     oplot, time, ppco2, thick=5, color=redindex,line=2
