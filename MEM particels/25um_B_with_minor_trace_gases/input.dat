@@ -1,0 +1,9 @@
+../input_SLF_150.dat 
+   .25000E-02
+1000		Pressure in hpa
+5, 50d0 4. 4 4 4 4.35
+5  	outPut modus; 0: IVEA (log time), 1:EDB linear time, 2: input times     
+0
+ 0.0   0.994d0   0.298150E+03   48.7         36.3   400      .27  0.23
+ .1   0.5d0   0.298150E+03      48.7         36.3   400      .27  0.23
+ 1E8   0.5d0   0.298150E+03     48.7         36.3   400      .27  0.23

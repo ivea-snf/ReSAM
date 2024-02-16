@@ -1,0 +1,9 @@
+../input_SLF_150.dat
+25d-4  initial radius im cm
+1000		Pressure in hpa
+5, 50d0 4. 4 4 4 4.35
+15  	outPut modus; 0: IVEA (log time), 1:EDB linear time, 2: input times
+0 deltax for gas phase
+ 0.0   0.994d0   0.298150E+03   0         0   500      0 0 0 0
+ .1   0.5d0   0.298150E+03      0         0   500      0 0 0 0
+ 1E8   0.5d0   0.298150E+03     0         0   500      0 0 0 0

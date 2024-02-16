@@ -1,0 +1,41 @@
+	 Name	    nummering  molar mass     molar volume   diff_factor  charge
+                H2O,    1        18.0000        18.0000         1.0000    0
+        organic 460,    2       190.0000       190.0000        -1.0000    0
+  total acetic acid,    3        60.0000        57.1429         0.4920    0
+     total ammonium,    4        17.0000        23.2877         0.6970    0
+          total CO2,    5        62.0168        45.5105         0.8110    0
+                 H+,    6         1.0000         1.0000         3.8110    1
+                OH-,    7        17.0000        17.0000         2.1520   -1
+            CH3COO-,    8        60.0000        56.1429         0.4510   -1
+            CH3COOH,    9        59.0000        57.1429         0.4920    0
+          NH4CH3COO,   10        77.0000        66.3793         0.4920    0
+      organic 68175,   11      1000.0000      1000.0000        -1.0000    0
+               NH4+,   12        18.0000        24.2877         0.7620    1
+                CO2,   13        62.0168        45.5105         0.8110    0
+                CO3,   14        61.0168        44.5105         0.4550   -2
+              HCO2-,   15        60.0168        43.5105         0.4550   -1
+                NA+,   16        23.0000        10.6538         0.5450    1
+                Cl-,   17        35.4400        16.4162         0.8320   -1
+               NO3-,   18        62.0000        40.7219         0.8160   -1
+                 X+,   19        39.9965        19.9175         0.5450    1
+                 Y-,   20        61.1188        26.1498         0.8320   -1
+                IAV,   21         0.1000         0.1000        -1.0000    0
+               SARS,   22         0.1000         0.1000        -1.0000    0
+                NH3,   23        17.0000        23.2877         0.6970    0
+              H3PO4,   24        98.0000        52.1277         0.6970    0
+             H2PO4-,   25        97.0000        51.1277         0.6970   -1
+             HPO4--,   26        96.0000        50.1277         0.6970   -2
+             HSO4- ,   27        97.064         40d0            0.6970   -1
+              SO4--,   28        96.06          39d0            0.6970   -2
+    NaCl in crystal,   29        58.44          27.05556         -1       0
+
+      
+The diff_factor is a scaling factor for different species in infinte dilute solution
+-1: diffusion coefficient is zero, no liquid phase diffusion.
+
+for H2O is 1.0
+
+THis table is usally fixed.
+Modifaction is needed only for new species.
+!!!!However the dissociation adn evaporating (eg. Cl-, NO3-)  species can not be changed!!! 
+
